@@ -9,7 +9,9 @@ namespace ConsoleApp1
     internal class Sumator
     {
         private List<int> Liczby = new List<int>();
-        public Sumator() { }
+        public Sumator(List<int> values) {
+            Liczby = values;
+        }
 
         public int Suma()
         {
