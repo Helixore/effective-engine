@@ -13,7 +13,7 @@ internal class Program
         student.DodajOcene(5);
         student.DodajOcene(3);
         student.DodajOcene(4);
-        student.DodajOcene(2);
+        student.DodajOcene(0);
         Console.WriteLine($"Średnia: {student.SredniaOcen}");
         Licz v1 = new Licz(5);
         v1.Dodaj(420);
