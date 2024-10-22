@@ -8,35 +8,17 @@ namespace ConsoleApp1
 {
     internal class Osoba
     {
-        string imie;
-        string nazwisko;
-        int wiek;
+        string imie
+        { get => imie; set { if(value.Length >= 2) imie = value; } }
+        string nazwisko
+        { get => nazwisko; set { if (value.Length >= 2) nazwisko = value; } }
+        int wiek
+        { get => wiek; set { if(value > 0)  wiek = value; } }
         public Osoba(string v1, string v2, int v3)
         {
-            if (v1.Length >= 2)
-            {
-                imie = v1;
-            }
-            else
-            {
-                return;
-            }
-            if (v2.Length >= 2)
-            {
-                nazwisko = v2;
-            }
-            else
-            {
-                return;
-            }
-            if (v3 > 0)
-            {
-                wiek = v3;
-            }
-            else
-            {
-                return;
-            }
+            imie = v1;
+            nazwisko = v2;
+            wiek = v3;
         }
         public string WyswietlInformacje()
         {
