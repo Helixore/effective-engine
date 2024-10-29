@@ -6,25 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Student
+    class Samochod
     {
-        string imie, nazwisko;
-        List<int> oceny = new List<int>();
-        public decimal SredniaOcen { get
-            {
-                return (decimal)oceny.Average();
-            }
-        }
-        public Student(string v1, string v2)
-        {
-            imie = v1;
-            nazwisko = v2;
-        }
-        public void DodajOcene(int ocena)
-        {
-            this.oceny.Add(ocena);
-        }
-        
-
+        public string marka;
+        public string model;
+        public string nadwozie;
+        public string kolor;
+        public int rok_produkcji;
+        public int przebieg { get => przebieg; set { if (value > 0) { przebieg = value; } }
     }
 }
