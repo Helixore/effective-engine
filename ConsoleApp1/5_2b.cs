@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Circle_ : Point, ICloneable
+    class Circle_ : Point, ICloneable, Shapez
     {
+        double area;
+        public double Area
+        {
+            get { return area; }
+            set { area = value; }
+        }
         double radius;
         string? name;
         public double _radius
@@ -34,6 +40,20 @@ namespace ConsoleApp1
         {
             return Clone();
         }
+
+        public virtual void ReadArea()
+        {
+            Console.Write("Set an area: ");
+            string? s = Console.ReadLine();
+            area = Double.Parse(s);
+        }
+
+        public override void MoveObject(double x, double y)
+        {
+            this._x += x;
+            this._y += y;
+        }
+
         public override double GetCircumference()
         {
             return (2 * Math.PI * _radius);

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Triangle_ : Point, ICloneable
+    class Triangle_ : Point, ICloneable, Shapez
     {
 
         Point point1, point2, point3;
@@ -32,6 +33,15 @@ namespace ConsoleApp1
         public override double GetCircumference()
         {
             return Distance(point1, point2) + Distance(point2, point3) + Distance(point3, point1);
+        }
+        public override void MoveObject(double x, double y)
+        {
+            point1._x += x;
+            point1._y += y;
+            point2._x += x;
+            point2._y += y;
+            point3._y += x;
+            point3._y += y;
         }
         public override string ToString()
         {

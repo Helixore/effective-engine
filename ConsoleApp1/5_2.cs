@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Point
+    class Point : Shapez
     {
         double x, y;
+        string? Name;
         public double _x
         {
             get { return x; }
@@ -24,6 +25,11 @@ namespace ConsoleApp1
         {
             this._x = x;
             this._y = y;
+        }
+        public virtual void MoveObject(double x, double y)
+        {
+            this._x += x;
+            this._y += y;
         }
         public virtual double GetCircumference()
         {
