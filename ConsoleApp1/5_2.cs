@@ -6,32 +6,55 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Sumator
+    class Point
     {
-        private List<int> Liczby = new List<int>();
-        public Sumator(List<int> values) {
-            Liczby = values;
+        double x, y;
+        public double _x
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public double _y
+        {
+            get { return y; }
+            set { y = value; }
         }
 
-        public int Suma()
+        public Point(double x, double y)
         {
-            return Liczby.Sum();
+            this._x = x;
+            this._y = y;
         }
-        public int SumaPodziel2()
+        public virtual double GetCircumference()
         {
-            return Liczby.Where(x => x % 2 == 0).Sum();
+            return 0;
         }
-        public int IleElementow()
+        public override string ToString()
         {
-            return Liczby.Count();
+            return $"Point: \n X: {_x} \n Y: {_y} \n";
         }
-        public int[] liczby()
+        public override bool Equals(object? obj)
         {
-            return Liczby.ToArray();
+            if(obj is Point)
+            {
+                return ((Point)obj).x == this._x && ((Point)obj).y == this._y;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public int[] BetweenIndexes(int lowIndex, int highIndex)
+        public static Point operator <(Point a, Point b)
         {
-            return Liczby.Skip(lowIndex).Take(highIndex - lowIndex).ToArray();
+            return a.GetCircumference() < b.GetCircumference() ? a : b;
+        }
+        public static Point operator >(Point a, Point b)
+        {
+            return a.GetCircumference() > b.GetCircumference() ? a : b;
+        }
+        public static double Distance(Point p1, Point p2)
+        {
+            return Math.Sqrt(Math.Pow((p1.x - p2.x),2) + Math.Pow((p1.y - p2.y),2));
         }
     }
 }

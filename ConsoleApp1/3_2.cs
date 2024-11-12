@@ -13,6 +13,6 @@ namespace ConsoleApp1
         public string nadwozie;
         public string kolor;
         public int rok_produkcji;
-        public int przebieg { get => przebieg; set { if (value > 0) { przebieg = value; } }
+        public int przebieg { get => przebieg; set { if (value > 0) { przebieg = value; } } }
     }
 }

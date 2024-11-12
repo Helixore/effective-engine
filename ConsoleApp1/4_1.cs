@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Shape
+    internal class Shape
     {
         public int X;
         public int Y;
@@ -24,7 +24,7 @@ namespace ConsoleApp1
             Console.WriteLine("This function draws a shape!");
         }
     }
-    class Rectangle : Shape
+    internal class Rectangle : Shape
     {
         public Rectangle(int v1, int v2, int v3, int v4) : base(v1, v2, v3, v4)
         {
@@ -38,7 +38,7 @@ namespace ConsoleApp1
             Console.WriteLine("Drawing a rectangle");
         }
     }
-    class Triangle : Shape
+    internal class Triangle : Shape
     {
         public Triangle(int v1, int v2, int v3, int v4) : base(v1, v2, v3, v4)
         {
@@ -52,7 +52,7 @@ namespace ConsoleApp1
             Console.WriteLine("Drawing a Triangle");
         }
     }
-    class Circle : Shape
+    internal class Circle : Shape
     {
         public Circle(int v1, int v2, int v3, int v4) : base(v1, v2, v3, v4)
         {
