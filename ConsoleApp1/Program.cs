@@ -68,7 +68,7 @@ internal class Program
         }
 
     }
-    private static void Main(string[] args)
+    public void Lab4()
     {
         A a1 = new A();
         A a2 = new A();
@@ -116,7 +116,7 @@ internal class Program
         Point p1 = new Point(1, 2);
         Point p2 = new Point(23, 51);
         Point p3 = new Point(321, 51784);
-        Triangle_ t1 = new Triangle_(1,3,1325,3452,12315,734523,"Jeff");
+        Triangle_ t1 = new Triangle_(1, 3, 1325, 3452, 12315, 734523, "Jeff");
         Triangle_ t2 = new Triangle_(1, 3, 346, 1672, 12315, 712341, "Geoff");
         Console.WriteLine(t1.ToString());
         bool bb2;
@@ -125,5 +125,10 @@ internal class Program
         bb2 = t1.Equals(t2);
         Console.WriteLine(bb1.ToString());
         Console.WriteLine(bb2.ToString());
+    }
+    private static void Main(string[] args)
+    {
+        Kalkulator k1 = new Kalkulator();
+        k1.Run();
     }
 }
