@@ -126,9 +126,18 @@ internal class Program
         Console.WriteLine(bb1.ToString());
         Console.WriteLine(bb2.ToString());
     }
-    private static void Main(string[] args)
+    private static void Lab5()
     {
         Kalkulator k1 = new Kalkulator();
         k1.Run();
+    }
+    private static void Main(string[] args)
+    {
+        List<string> list = new List<string>();
+        Seven one = new Seven();
+        one.ToFile("text.txt", "W69973");
+        Console.WriteLine(one.FromFile("text.txt"));
+        list = one.ToList("pesels.txt");
+        foreach(string s in list) Console.WriteLine(s + " is " + one.whatGender(s));
     }
 }
